@@ -1,5 +1,6 @@
 import eu.kliba.basic.Basic;
 import eu.kliba.basic.SimpleCycle;
+import eu.kliba.basic.Strings;
 
 public class App {
     public static void main(String[] args) {
@@ -8,6 +9,9 @@ public class App {
 //        basicInstance.invokeAllBasicMethods();
 
         SimpleCycle simpleCycleInstance = new SimpleCycle();
-        simpleCycleInstance.invokeAllSimpleCycleMethods();
+//        simpleCycleInstance.invokeAllSimpleCycleMethods();
+
+        Strings myStrings = new Strings();
+        myStrings.allMethodFromStringsClass();
     }
 }
