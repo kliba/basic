@@ -7,6 +7,9 @@ public class Strings {
         bannTabuChar('y',"yellow");
         everySecondChar("hello");
         printBackwards("abcdefgh");
+        spitASentence("Here we go.");
+        displayBackwardsCapital("capital back");
+        spitToWorldsWithCapitalFirstChar("There you go.");
 
     }
 
@@ -64,6 +67,46 @@ public class Strings {
         System.out.println(world + " backwards is " + backwards);
     }
 
+    /**
+     * Input sentence is going to be spitted at every world if those are separated by space character.
+     * Then print them in a new line.
+     * @param sentence Sentence as a String what should be spitted.
+     */
     private static void spitASentence(String sentence) {
+        String[] strings = sentence.split(" ");
+        for (String s : strings) {
+            System.out.println(s);
+        }
     }
+
+    /**
+     * Read an input String what will be printed in backwards. Furthermore it is going to be capital letter.
+     * @param world Parameter as a String.
+     */
+    private static void displayBackwardsCapital(String world) {
+        String printing = "";
+        for (int i = world.length() - 1; i >= 0; i--) {
+            printing += world.charAt(i);
+        }
+        System.out.println(printing.toUpperCase());
+    }
+
+    /**
+     * The input sentence will be spitted by space characters and print them with first capital letter
+     * in a new lines.
+     * @param sentence Sentence what should be spitted. It is a string.
+     */
+    private static void spitToWorldsWithCapitalFirstChar(String sentence) {
+        String[] strings = sentence.split(" ");
+
+        for (String s : strings) {
+            //find first character of the param
+            String firstCharacter = s.charAt(0) + "";
+            // firstCharacter variable assigns to myCharCapital to uppercase and stores that as a String
+            String myCharCapital = ("" + firstCharacter).toUpperCase();
+            //print out wolds replacing the first letter to uppercase
+            System.out.println(myCharCapital + s.substring(1, s.length()));
+        }
+    }
+
 }
